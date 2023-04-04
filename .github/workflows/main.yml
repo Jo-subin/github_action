@@ -1,0 +1,19 @@
+# action.yaml
+name: Test action
+on: [push]
+
+jobs:
+  get-num-square:
+    runs-on: ubuntu-latest
+    name: Returns the number square
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Fetch num squared
+        uses: ./
+        id: get_square
+        with:
+          num: 11
+      -name: Print the square
+       run: echo "${{ steps.get_square.outputs.num_squared }}"
+
