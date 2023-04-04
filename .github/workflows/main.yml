@@ -1,4 +1,4 @@
-# action.yaml
+
 name: Test action
 on: [push]
 
@@ -14,6 +14,6 @@ jobs:
         id: get_square
         with:
           num: 11
-      -name: Print the square
-       run: echo "${{ steps.get_square.outputs.num_squared }}"
+      - name: Print the square
+        run: echo "${{ steps.get_square.outputs.num_squared }}"
 
